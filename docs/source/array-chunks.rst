@@ -107,7 +107,7 @@ Unknown chunksizes also occur when using a Dask DataFrame to create a Dask array
    >>> ddf.to_dask_array()
    dask.array<..., shape=(nan, 2), ..., chunksize=(nan, 2)>
 
-Using :func:`~dask.dataframe.DataFrame.to_dask_array` resolves this issue:
+Using :func:`~dask.dataframe.DataFrame.to_dask_array` with `lengths=True` resolves this issue by triggering computation of the chunk sizes:
 
 .. code-block:: python
 
